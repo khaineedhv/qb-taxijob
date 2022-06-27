@@ -291,7 +291,7 @@ RegisterNetEvent("qb-taxi:client:TakeVehicle", function(data)
                 closeMenuFull()
                 SetEntityHeading(veh, Config.CabSpawns[SpawnPoint].w)
                 TaskWarpPedIntoVehicle(PlayerPedId(), veh, -1)
-                TriggerEvent("vehiclekeys:client:SetOwner", QBCore.Functions.GetPlate(veh))
+                exports['qb-vehiclekeys']:SetVehicleKey(GetVehicleNumberPlateText(veh), true)
                 SetVehicleEngineOn(veh, true, true)
             end, coords, true)
         else
